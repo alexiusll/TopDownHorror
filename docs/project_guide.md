@@ -535,11 +535,11 @@ git push -u origin chore/1-upgrade-unity-6-5
 
 ## 测试结果
 
-- [x] 项目可以正常打开
-- [x] Console 没有新增错误
-- [x] 主要场景可以进入 Play Mode
-- [x] 现有功能运行正常
-- [x] Windows 构建成功
+- [√] 项目可以正常打开
+- [√] Console 没有新增错误
+- [√] 主要场景可以进入 Play Mode
+- [√] 现有功能运行正常
+- [√] Windows 构建成功
 
 ## 风险
 
@@ -677,7 +677,7 @@ YYYY-Www.md
 
 ## 实际完成
 
-- [x] 已完成事项
+- [√] 已完成事项
 - [ ] 未完成事项
 
 ## 时间统计
