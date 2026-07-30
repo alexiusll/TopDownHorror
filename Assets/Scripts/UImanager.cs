@@ -56,13 +56,13 @@ public class UImanager : MonoBehaviour
 
     public void OpenMenu()
     {
-        Debug.Log("打开菜单 ");
+        Debug.Log("鎵撳紑鑿滃崟 ");
         menu.SetActive(true);
     }
 
     public void CloseMenu()
     {
-        Debug.Log("关闭菜单 ");
+        Debug.Log("鍏抽棴鑿滃崟 ");
         menu.SetActive(false);
     }
 

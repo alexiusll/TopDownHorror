@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem; // ĞèÒªÒıÈë InputSystem ¿â
+using UnityEngine.InputSystem; // éœ€è¦å¼•å…¥ InputSystem åº“
 
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
 
-    // ÕâÊÇÒ»¸öÊôĞÔÌØĞÔ£¬ÔÚ Unity ÖĞÊ¹ÓÃËü¿ÉÒÔÈÃË½ÓĞ±äÁ¿ÔÚ Unity ±à¼­Æ÷ÖĞÏÔÊ¾Îª¿É±à¼­µÄ×Ö¶Î¡£
-    // ÕâÒâÎ¶×Å£¬¼´Ê¹ speed ÊÇË½ÓĞµÄ£¬ËüÒ²¿ÉÒÔÔÚ Unity ±à¼­Æ÷µÄ Inspector ´°¿ÚÖĞÏÔÊ¾²¢±à¼­¡£
+    // è¿™æ˜¯ä¸€ä¸ªå±æ€§ç‰¹æ€§ï¼Œåœ¨ Unity ä¸­ä½¿ç”¨å®ƒå¯ä»¥è®©ç§æœ‰å˜é‡åœ¨ Unity ç¼–è¾‘å™¨ä¸­æ˜¾ç¤ºä¸ºå¯ç¼–è¾‘çš„å­—æ®µã€‚
+    // è¿™æ„å‘³ç€ï¼Œå³ä½¿ speed æ˜¯ç§æœ‰çš„ï¼Œå®ƒä¹Ÿå¯ä»¥åœ¨ Unity ç¼–è¾‘å™¨çš„ Inspector çª—å£ä¸­æ˜¾ç¤ºå¹¶ç¼–è¾‘ã€‚
     [SerializeField] private int speed = 5;
 
     private Vector2 movement;
@@ -21,20 +21,20 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
-    // ¼ÓÔØ½Å±¾Ê¾ÀıµÄÊ±ºòµ÷ÓÃ
+    // åŠ è½½è„šæœ¬ç¤ºä¾‹çš„æ—¶å€™è°ƒç”¨
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        // ÉèÖÃµ¥Àı
+        // è®¾ç½®å•ä¾‹
         if (instance == null)
         {
             instance = this;
         }
         else
         {
-            Debug.LogError("´´½¨ÁË2¸ö PlayerMovement ¶ÔÏó");
+            Debug.LogError("åˆ›å»ºäº†2ä¸ª PlayerMovement å¯¹è±¡");
             if (instance != this)
             {
                 Destroy(gameObject);
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    // OnMovement ·½·¨»áÓÃÓÚ Player Input ×é¼ş
+    // OnMovement æ–¹æ³•ä¼šç”¨äº Player Input ç»„ä»¶
     private void OnMovement(InputValue value)
     {
         if (canMove)
@@ -80,30 +80,30 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    // ÓÃÓÚÎïÀíÔË¶¯£¬¹Ì¶¨Ö¡µ÷ÓÃ
+    // ç”¨äºç‰©ç†è¿åŠ¨ï¼Œå›ºå®šå¸§è°ƒç”¨
     private void FixedUpdate()
     {
         if (canMove)
         {
-            // ·½·¨Ò» velocity
-            // ĞèÒªÉèÖÃ linear drag Ä¦²ÁÁ¦, ·ñÔòÍæ¼Ò²»»áÍ£ÏÂÀ´
-            // µ«ÊÇÕâÖÖ·½Ê½¿ÉÄÜ²»¹»ÏßĞÔ,ÒòÎªÍæ¼ÒÒ»¿ªÊ¼±»Ê©¼ÓºÜ´óµÄËÙ¶È
+            // æ–¹æ³•ä¸€ velocity
+            // éœ€è¦è®¾ç½® linear drag æ‘©æ“¦åŠ›, å¦åˆ™ç©å®¶ä¸ä¼šåœä¸‹æ¥
+            // ä½†æ˜¯è¿™ç§æ–¹å¼å¯èƒ½ä¸å¤Ÿçº¿æ€§,å› ä¸ºç©å®¶ä¸€å¼€å§‹è¢«æ–½åŠ å¾ˆå¤§çš„é€Ÿåº¦
             //if (movement.x != 0 || movement.y != 0)
             //{
-            //    // ¸ÕÌåµÄ ÏßĞÔËÙ¶È
+            //    // åˆšä½“çš„ çº¿æ€§é€Ÿåº¦
             //    rb.velocity = movement * speed;
             //}
 
-            // ·½·¨¶ş MovePosition ,¿ÉÄÜ²»¹»ÎïÀí?
+            // æ–¹æ³•äºŒ MovePosition ,å¯èƒ½ä¸å¤Ÿç‰©ç†?
 
-            // ½«ÏòÁ¿±ê×¼»¯£¬±ÜÃâË®Æ½Î»ÒÆºÍĞ±·½ÏòÎ»ÒÆËÙ¶È²»Í¬µÄÎÊÌâ£¨ËÆºõ±¾Éí¾Í²»»áÓĞÕâ¸öÎÊÌâ...)
+            // å°†å‘é‡æ ‡å‡†åŒ–ï¼Œé¿å…æ°´å¹³ä½ç§»å’Œæ–œæ–¹å‘ä½ç§»é€Ÿåº¦ä¸åŒçš„é—®é¢˜ï¼ˆä¼¼ä¹æœ¬èº«å°±ä¸ä¼šæœ‰è¿™ä¸ªé—®é¢˜...)
             Vector2 movementNorm = movement.normalized;
             rb.MovePosition(rb.position + movementNorm * speed * Time.fixedDeltaTime);
-            // Time.fixedDeltaTime µÄÖµ¾ÍµÈÓÚ 0.02
+            // Time.fixedDeltaTime çš„å€¼å°±ç­‰äº 0.02
             // Debug.Log("FixedDeltaTime: " + Time.fixedDeltaTime);
             // Debug.Log("movementNorm: " + movementNorm.ToString());
 
-            // ·½·¨Èı Ê©¼ÓÒ»¸öÁ¦
+            // æ–¹æ³•ä¸‰ æ–½åŠ ä¸€ä¸ªåŠ›
             // rb.AddForce(movement * speed);
         }
         else
@@ -115,12 +115,12 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Ê²Ã´Ò²²»×ö
+        // ä»€ä¹ˆä¹Ÿä¸åš
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Ê²Ã´Ò²²»×ö
+        // ä»€ä¹ˆä¹Ÿä¸åš
     }
 }
