@@ -8,14 +8,14 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
 
-    [Header("ÊÂ¼şÉèÖÃ")]
+    [Header("äº‹ä»¶è®¾ç½®")]
     public List<string> events;
     public List<bool> completedEvents;
 
     // Start is called before the first frame update
     void Start()
     {
-        // ÉèÖÃÎªµ¥Àı
+        // è®¾ç½®ä¸ºå•ä¾‹
         instance = this;
     }
 
@@ -33,7 +33,7 @@ public class EventManager : MonoBehaviour
         return -1;
     }
 
-    // ¼ì²éÊÂ¼şÊÇ·ñ±»±ê¼ÇÎª complete
+    // æ£€æŸ¥äº‹ä»¶æ˜¯å¦è¢«æ ‡è®°ä¸º complete
     public bool CheckIfComplete(string eventToCheck)
     {
         if (GetEventNumber(eventToCheck) != -1)
@@ -53,11 +53,11 @@ public class EventManager : MonoBehaviour
 
     public void UpdateLocalEventObjects()
     {
-        // FindObjectsOfType<T>() ÊÇ Unity Ìá¹©µÄ·½·¨¡£»ñÈ¡ËùÓĞ¼ÓÔØµÄ Type ÀàĞÍ¶ÔÏóµÄÁĞ±í¡£
-        // ÏÂÃæ±íÊ¾²éÕÒËùÓĞ¹ÒÔØÁË EventObjectActivator ½Å±¾µÄ GameObject
-        EventObjectActivator[] eventObjects = FindObjectsOfType<EventObjectActivator>();
+        // FindObjectsOfType<T>() æ˜¯ Unity æä¾›çš„æ–¹æ³•ã€‚è·å–æ‰€æœ‰åŠ è½½çš„ Type ç±»å‹å¯¹è±¡çš„åˆ—è¡¨ã€‚
+        // ä¸‹é¢è¡¨ç¤ºæŸ¥æ‰¾æ‰€æœ‰æŒ‚è½½äº† EventObjectActivator è„šæœ¬çš„ GameObject
+        EventObjectActivator[] eventObjects = Object.FindObjectsByType<EventObjectActivator>();
 
-        Logger.DebugLog("¸üĞÂµ±Ç°³¡¾°ÖĞ<EventObjectActivator>ÀàĞÍ¶ÔÏóµÄ×´Ì¬...");
+        Logger.DebugLog("æ›´æ–°å½“å‰åœºæ™¯ä¸­<EventObjectActivator>ç±»å‹å¯¹è±¡çš„çŠ¶æ€...");
         if (eventObjects.Length > 0)
         {
             for (int i = 0; i < eventObjects.Length; i++)
