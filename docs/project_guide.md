@@ -78,14 +78,14 @@ GitHub Project 的 `In Progress` 同时最多保留一个任务。
 
 不同工具只保存自己负责的信息，避免重复维护。
 
-| 工具            | 用途                               |
-| --------------- | ---------------------------------- |
-| GitHub Issues   | 记录任务、Bug、研究事项和验收标准  |
-| GitHub Projects | 记录任务状态、优先级和预计时间     |
-| Git             | 保存代码和文档修改历史             |
-| Pull Request    | 检查和合并一组完整修改             |
-| Clockify        | 记录实际投入时间                   |
-| Markdown 文档   | 保存长期有效的设计、流程和技术信息 |
+| 工具               | 用途                                   |
+| ------------------ | -------------------------------------- |
+| GitHub Issues      | 记录任务、Bug、研究事项和验收标准      |
+| GitHub Projects    | 记录任务状态、优先级和预计时间         |
+| Git                | 保存代码和文档修改历史                 |
+| Pull Request       | 检查和合并一组完整修改                 |
+| Super Productivity | 管理当天任务、记录实际时间和生成工作日 |
+| Markdown 文档      | 保存长期有效的设计、流程和技术信息     |
 
 同一份信息不应在多个位置重复维护。
 
@@ -93,7 +93,7 @@ GitHub Project 的 `In Progress` 同时最多保留一个任务。
 
 - 具体开发任务放在 Issue
 - 当前任务状态放在 Project
-- 实际耗时放在 Clockify
+- 实际耗时放在 Super Productivity
 - 长期开发规则放在本文档
 
 ---
@@ -563,11 +563,17 @@ Assets 下被重新序列化的场景和 Prefab
 
 ---
 
-## 11. Clockify 时间记录
+## 11. 时间记录
 
-Clockify 只记录实际投入时间。
+Super Productivity 用于记录实际投入时间，不作为项目任务的事实来源。
 
-建议使用以下分类：
+- GitHub Issues 保存任务内容
+- GitHub Projects 保存任务状态、优先级和预计时间
+- Super Productivity 保存当天执行任务和实际时间
+
+从 GitHub 导入任务时，保留 Issue 编号和标题。
+
+工作类型使用以下标签：
 
 - Programming
 - Design
@@ -575,28 +581,9 @@ Clockify 只记录实际投入时间。
 - Testing
 - Project Management
 
-时间记录名称应关联 Issue：
+开始处理 Issue 时启动计时，暂停工作时停止计时。
 
-```text
-#12 玩家八方向移动
-#18 修复玩家贴墙抖动
-#23 重构交互系统
-```
-
-以下活动应计入实际时间：
-
-- 编码
-- Unity 编辑器操作
-- 查阅技术资料
-- 与 AI 讨论当前任务
-- 调试
-- 测试
-- 构建
-- 与项目直接相关的文档维护
-
-休息或进行无关活动时暂停计时。
-
-时间记录用于改进估算，不用于评价个人勤奋程度。
+每周通过 Worklog 汇总时间，并写入周复盘文档。
 
 ---
 
