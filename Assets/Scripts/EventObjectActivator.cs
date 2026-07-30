@@ -50,12 +50,12 @@ public class EventObjectActivator : MonoBehaviour
         {
             if (waitBeforeActivate)
             {
-                Logger.DebugLog("¿ªÆôĞ­³Ì£¬µÈ´ıÊ±¼äÎª:" + waitTime);
+                Logger.DebugLog("å¼€å¯åç¨‹ï¼Œç­‰å¾…æ—¶é—´ä¸º:" + waitTime);
                 StartCoroutine(waitCo());
             }
             else
             {
-                Logger.DebugLog("ÉèÖÃÓÎÏ·¶ÔÏó[" + objectToActivate.name + "], ×´Ì¬Îª:" + (activeIfComplete ? "ÆôÓÃ" : "²»ÆôÓÃ"));
+                Logger.DebugLog("è®¾ç½®æ¸¸æˆå¯¹è±¡[" + objectToActivate.name + "], çŠ¶æ€ä¸º:" + (activeIfComplete ? "å¯ç”¨" : "ä¸å¯ç”¨"));
                 objectToActivate.SetActive(activeIfComplete);
             }
         }
@@ -64,12 +64,12 @@ public class EventObjectActivator : MonoBehaviour
     IEnumerator waitCo()
     {
         yield return new WaitForSeconds(waitTime);
-        Logger.DebugLog("ÉèÖÃÓÎÏ·¶ÔÏó[" + objectToActivate.name + "], ×´Ì¬Îª:" + (activeIfComplete ? "ÆôÓÃ" : "²»ÆôÓÃ"));
+        Logger.DebugLog("è®¾ç½®æ¸¸æˆå¯¹è±¡[" + objectToActivate.name + "], çŠ¶æ€ä¸º:" + (activeIfComplete ? "å¯ç”¨" : "ä¸å¯ç”¨"));
         objectToActivate.SetActive(activeIfComplete);
 
-        // onActivate?.Invoke(); ÕâÀïÊ¹ÓÃÁË ¿Õ¼ì²éµ÷ÓÃ (?.)£¬ÒâË¼ÊÇ£º
-        // Èç¹û onActivate ²»Îª null£¬ÔòÖ´ĞĞ Invoke()£¬µ÷ÓÃËùÓĞÒÑ×¢²áµÄ¼àÌıÆ÷¡£
-        // Èç¹û onActivate Îª null£¬Ôò²»»áÖ´ĞĞÈÎºÎ²Ù×÷£¬±ÜÃâ NullReferenceException¡£
+        // onActivate?.Invoke(); è¿™é‡Œä½¿ç”¨äº† ç©ºæ£€æŸ¥è°ƒç”¨ (?.)ï¼Œæ„æ€æ˜¯ï¼š
+        // å¦‚æœ onActivate ä¸ä¸º nullï¼Œåˆ™æ‰§è¡Œ Invoke()ï¼Œè°ƒç”¨æ‰€æœ‰å·²æ³¨å†Œçš„ç›‘å¬å™¨ã€‚
+        // å¦‚æœ onActivate ä¸º nullï¼Œåˆ™ä¸ä¼šæ‰§è¡Œä»»ä½•æ“ä½œï¼Œé¿å… NullReferenceExceptionã€‚
         onActivate?.Invoke();
     }
 }

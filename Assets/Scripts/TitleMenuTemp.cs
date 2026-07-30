@@ -26,9 +26,9 @@ public class TitleMenuTemp : MonoBehaviour
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
 
-            Debug.Log("Êó±ê×ó¼ü±»µã»÷");
+            Debug.Log("é¼ æ ‡å·¦é”®è¢«ç‚¹å‡»");
 
-            // ÕâÀïĞ´ÄãµÄµã»÷Âß¼­
+            // è¿™é‡Œå†™ä½ çš„ç‚¹å‡»é€»è¾‘
             pressStart.SetActive(false);
             ShowMenu();
         }
@@ -41,14 +41,14 @@ public class TitleMenuTemp : MonoBehaviour
 
     public void Exit()
     {
-        Debug.Log("µã»÷ÍË³öÓÎÏ·");
+        Debug.Log("ç‚¹å‡»é€€å‡ºæ¸¸æˆ");
 
         Application.Quit();
     }
 
     public void NewGame(int difficulty)
     {
-        Debug.Log("µã»÷¿ªÊ¼ÓÎÏ·£¬ÓÎÏ·ÄÑ¶È:" + difficulty);
+        Debug.Log("ç‚¹å‡»å¼€å§‹æ¸¸æˆï¼Œæ¸¸æˆéš¾åº¦:" + difficulty);
 
         SceneManager.LoadScene(newGameScene);
 

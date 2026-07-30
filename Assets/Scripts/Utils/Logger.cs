@@ -16,12 +16,12 @@ public enum LogLevel
 public class Logger
 {
     /// <summary>
-    /// µ±Ç°ÈÕÖ¾µÈ¼¶£ºÖ»»áÊä³öµÈ¼¶ ¡İ µ±Ç°µÈ¼¶ µÄÈÕÖ¾
+    /// å½“å‰æ—¥å¿—ç­‰çº§ï¼šåªä¼šè¾“å‡ºç­‰çº§ â‰¥ å½“å‰ç­‰çº§ çš„æ—¥å¿—
     /// </summary>
     public static LogLevel CurrentLevel = LogLevel.Debug;
 
     /// <summary>
-    /// ÊÇ·ñÔÚÈÕÖ¾ÖĞ°üº¬º¯ÊıÃû¡¢ÎÄ¼şÃûºÍĞĞºÅ
+    /// æ˜¯å¦åœ¨æ—¥å¿—ä¸­åŒ…å«å‡½æ•°åã€æ–‡ä»¶åå’Œè¡Œå·
     /// </summary>
     public static bool IncludeCallerInfo = true;
 

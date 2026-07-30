@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    // µ¥Àı
+    // å•ä¾‹
     public static DialogManager instance;
 
     [Header("Initialization")]
@@ -29,7 +29,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("´´½¨ÁË2¸ö DialogManager ¶ÔÏó");
+            Debug.LogError("åˆ›å»ºäº†2ä¸ª DialogManager å¯¹è±¡");
             instance.gameObject.SetActive(false); 
         }
         
@@ -41,7 +41,7 @@ public class DialogManager : MonoBehaviour
         
     }
 
-    // µ÷ÓÃ¶Ô»°¿òµÄ·½·¨¡£ĞèÒª×Ö·û´®Êı×éĞĞ + bool ÓÃÓÚµ÷ÓÃ»½ĞÑ/½øÈëÊ±¼¤»îµÄ¶Ô»°¿ò
+    // è°ƒç”¨å¯¹è¯æ¡†çš„æ–¹æ³•ã€‚éœ€è¦å­—ç¬¦ä¸²æ•°ç»„è¡Œ + bool ç”¨äºè°ƒç”¨å”¤é†’/è¿›å…¥æ—¶æ¿€æ´»çš„å¯¹è¯æ¡†
     public void ShowDialogAuto(Sprite[] portraits, string[] newLines, bool isPerson)
     {
         // Debug.Log("ShowDialogAuto...");

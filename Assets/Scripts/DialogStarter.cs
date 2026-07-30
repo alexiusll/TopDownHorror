@@ -24,10 +24,10 @@ public class DialogStarter : MonoBehaviour
     {
         if(activateOnAwake)
         {
-            // 禁止玩家移动
+            // 绂佹鐜╁绉诲姩
             PlayerMovement.instance.canMove = false;
 
-            // 不再启用
+            // 涓嶅啀鍚敤
             activateOnAwake = false;
 
             DialogManager.instance.ShowDialogAuto(dialog.portraits, dialog.lines, displayName);

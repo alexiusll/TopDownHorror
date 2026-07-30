@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ÓÃÓÚ±ê¼ÇÄ³¸öÊÂ¼şµÄÍê³É×´Ì¬
+// ç”¨äºæ ‡è®°æŸä¸ªäº‹ä»¶çš„å®ŒæˆçŠ¶æ€
 public class EventTrigger : MonoBehaviour
 {
-    [Tooltip("Òª´¥·¢µÄÊÂ¼şÃû")]
+    [Tooltip("è¦è§¦å‘çš„äº‹ä»¶å")]
     public string eventName;
 
-    [Tooltip("ÊÇ·ñ±ê¼ÇÎªÍê³É£¬ÈôÎª false Ôò±ê¼ÇÎªÎ´Íê³É¡£")]
+    [Tooltip("æ˜¯å¦æ ‡è®°ä¸ºå®Œæˆï¼Œè‹¥ä¸º false åˆ™æ ‡è®°ä¸ºæœªå®Œæˆã€‚")]
     public bool markComplete;
 
-    [Tooltip("ÊÇ·ñÔÚÍæ¼Ò½øÈë´¥·¢Æ÷Ê±×Ô¶¯±ê¼ÇÊÂ¼ş¡£")]
+    [Tooltip("æ˜¯å¦åœ¨ç©å®¶è¿›å…¥è§¦å‘å™¨æ—¶è‡ªåŠ¨æ ‡è®°äº‹ä»¶ã€‚")]
     public bool markOnEnter;
 
-    [Tooltip("ÊÂ¼ş±ê¼ÇºóÊÇ·ñ½ûÓÃÕâ¸ö GameObject¡£")]
+    [Tooltip("äº‹ä»¶æ ‡è®°åæ˜¯å¦ç¦ç”¨è¿™ä¸ª GameObjectã€‚")]
     public bool deactivateOnMarking;
 
     public BoxCollider2D eventCollider;
@@ -37,19 +37,19 @@ public class EventTrigger : MonoBehaviour
 
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
-    //    Debug.Log("Íæ¼Ò½Ó´¥ÇøÓò ");
+    //    Debug.Log("ç©å®¶æ¥è§¦åŒºåŸŸ ");
     //}
 
     public void MarkEvent()
     {
         if (markComplete)
         {
-            Logger.DebugLog("[" + eventName + "]ÊÂ¼ş±ê¼ÇÎª Complete");
+            Logger.DebugLog("[" + eventName + "]äº‹ä»¶æ ‡è®°ä¸º Complete");
             EventManager.instance.MarkEventComplete(eventName);
         }
         else
         {
-            Logger.DebugLog("[" + eventName + "]ÊÂ¼ş±ê¼ÇÎª Incomplete");
+            Logger.DebugLog("[" + eventName + "]äº‹ä»¶æ ‡è®°ä¸º Incomplete");
             EventManager.instance.MarkEventIncomplete(eventName);
         }
 
@@ -67,7 +67,7 @@ public class EventTrigger : MonoBehaviour
         }
     }
 
-    // ÓÃÓÚÌáÊ¾
+    // ç”¨äºæç¤º
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(255, 255, 0, 0.7f);
