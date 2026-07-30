@@ -23,7 +23,7 @@ public class TitleMenuTemp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // 0代表左键
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
 
             Debug.Log("鼠标左键被点击");
